@@ -6,7 +6,12 @@ def main():
     skunk = Skunk("Stinky",0)
     unicorn = Unicorn("Keith",7)
     dragon = Dragon("Lizzy",1450)
-    zoo_lst = [dog,cat,skunk,unicorn,dragon]
+    dog2 = Dog("Doggo",80)
+    cat2 = Cat("Kitty",80)
+    skunk2 = Skunk("Stinky Jr.",80)
+    unicorn2 = Unicorn("Clair",80)
+    dragon2 = Dragon("McFly",80)
+    zoo_lst = [dog,cat,skunk,unicorn,dragon,dog2,cat2,skunk2,unicorn2,dragon2]
     for animal in zoo_lst:
         if animal.is_hungry():
             print(animal.__class__.__name__,animal.get_name())

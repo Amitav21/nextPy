@@ -32,6 +32,10 @@ class Cat(Animal):
         print("Meeeeow")
 
 class Skunk(Animal):
+
+    def __init__(self, _name, _hunger=0, _stink_count=6):
+        super().__init__(_name, _hunger)
+        self._stink_count = _stink_count
     def talk(self):
         print("tsssss")
 
@@ -46,6 +50,10 @@ class Unicorn(Animal):
      print("I’m not your toy...")
 
 class Dragon(Animal):
+
+    def __init__(self, _name, _hunger=0, _color="Green"):
+        super().__init__(_name, _hunger)
+        self._color = _color
     def talk(self):
         print("Raaaawr")
 

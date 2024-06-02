@@ -13,21 +13,29 @@ class Animal:
     def feed(self):
         self._hunger -= 1
 
+    def talk(self):
+        pass
+
 
 class Dog(Animal):
-    pass
+    def talk(self):
+        print("woof woof")
 
 class Cat(Animal):
-    pass
+    def talk(self):
+        print("mewo")
 
 class Skunk(Animal):
-    pass
+    def talk(self):
+        print("tsssss")
 
 class Unicorn(Animal):
-    pass
+   def talk(self):
+        print("Good day, darling")
 
 class Dragon(Animal):
-    pass
+    def talk(self):
+        print("Raaaawr")
 
 
 

@@ -12,6 +12,7 @@ def main():
             print(animal.__class__.__name__,animal.get_name())
             while animal.is_hungry():
                 animal.feed()
+            animal.talk()
 
 
 if __name__ == '__main__':

@@ -28,6 +28,7 @@ def main():
                 animal.sing()
             elif isinstance(animal, Dragon):
                 animal.breath_fire()
+    print(zoo_lst[0].zoo_name)
 
 
 if __name__ == '__main__':

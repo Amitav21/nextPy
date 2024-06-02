@@ -3,6 +3,7 @@ class Animal:
     def __init__(self, _name, _hunger = 0):
         self._hunger = _hunger
         self._name = _name
+        self.zoo_name = "Hayaton"
 
     def get_name(self):
         return self._name

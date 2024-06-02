@@ -13,6 +13,16 @@ def main():
             while animal.is_hungry():
                 animal.feed()
             animal.talk()
+            if isinstance(animal, Dog):
+                animal.fetch_stick()
+            elif isinstance(animal, Cat):
+                animal.chase_laser()
+            elif isinstance(animal, Skunk):
+                animal.stink()
+            elif isinstance(animal, Unicorn):
+                animal.sing()
+            elif isinstance(animal, Dragon):
+                animal.breath_fire()
 
 
 if __name__ == '__main__':

@@ -37,6 +37,19 @@ def gen_days(month, leap_year=True):
     for day in range(1, month_to_days[month] + 1):
         yield day
 
+def gen_date():
+    for year in gen_years():
+        if year % 4 == 0:
+            for month in gen_months():
+                for day in gen_days(month):
+                    for time in gen_time():
+                        print(f"{day}/{month}/{year}" + time)
+        else:
+            for month in gen_months():
+                for day in gen_days(month,False):
+                    for time in gen_time():
+                        print(f"{day}/{month}/{year} " + time)
+
 if __name__ == "__main__":
-    for day in gen_days(2,False):
-        print(day)
+    for date in gen_date():
+        print(date)

@@ -25,6 +25,10 @@ def gen_years(start=2019):
         yield start
         start = start + 1
 
+def gen_months():
+    for i in range (1,13):
+        yield i
+
 if __name__ == "__main__":
-    for year in gen_years(2010):
-        print(year)
+    for month in gen_months():
+        print(month)

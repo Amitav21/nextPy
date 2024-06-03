@@ -23,7 +23,7 @@ def gen_time():
 def gen_years(start=2019):
     while start <= time.gmtime().tm_year:
         yield start
-        start = start + 1
+        start += 1
 
 def gen_months():
     for i in range (1,13):
@@ -43,13 +43,16 @@ def gen_date():
             for month in gen_months():
                 for day in gen_days(month):
                     for time in gen_time():
-                        print(f"{day}/{month}/{year}" + time)
+                        yield (f"{day}/{month}/{year}" + time)
         else:
             for month in gen_months():
                 for day in gen_days(month,False):
                     for time in gen_time():
-                        print(f"{day}/{month}/{year} " + time)
+                        yield (f"{day}/{month}/{year} " + time)
 
 if __name__ == "__main__":
+    counter = -1
     for date in gen_date():
-        print(date)
+        counter += 1
+        if counter % 1000000 == 0 and counter != 0:
+            print(date)

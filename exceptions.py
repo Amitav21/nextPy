@@ -1,11 +1,12 @@
 import string
 
 class UsernameContainsIllegalCharacter(Exception):
-    def __init__(self, username):
+    def __init__(self, username, illegal_char):
         self.username = username
+        self.illegal_char = illegal_char
 
     def __str__(self):
-        return f"username {self.username} contains illegal characters"
+        return f"username {self.username} contains an illegal char \"{self.illegal_char}\" at index {username.find(self.illegal_char)}"
 
 class UsernameTooShort(Exception):
     def __init__(self, username):
@@ -51,7 +52,7 @@ def check_input(username, password):
             raise  UsernameTooLong(username)
         for letter in username:
             if letter.isalnum() == False and letter != '_':
-                raise UsernameContainsIllegalCharacter(username)
+                raise UsernameContainsIllegalCharacter(username, letter)
         if len(password) < 8 :
             raise PasswordTooShort(password)
         if len(password) > 40:

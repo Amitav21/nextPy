@@ -3,7 +3,7 @@ def check_id_valid(id_number):
     sum = 0
     even_flag = False
     double_iter = map(lambda x: int(x) * 2, str(id_number))
-    for num in square_iter:
+    for num in double_iter:
         if even_flag == False:
             num = num/2
         else:
@@ -26,6 +26,7 @@ class IDIterator:
         return self
 
     def __next__(self):
+        self._id += 1
         while not check_id_valid(self._id):
             self._id += 1
             if self._id == 999999999:
@@ -34,5 +35,7 @@ class IDIterator:
 
 
 if __name__ == "__main__":
-    print(check_id_valid(123456780))
-    print(check_id_valid(123456782))
+    id = int(input("enter the id: "))
+    id_iter = IDIterator(id)
+    for i in range(10):
+        print(id_iter.__next__())

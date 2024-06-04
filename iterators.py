@@ -33,6 +33,13 @@ class IDIterator:
                 raise StopIteration
         return self._id
 
+def id_generator(id):
+        while id < 999999999:
+            id += 1
+            while not check_id_valid(id):
+                id += 1
+            yield id
+
 
 if __name__ == "__main__":
     id = int(input("enter the id: "))

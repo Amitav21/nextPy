@@ -2,6 +2,10 @@ import string
 
 class UsernameContainsIllegalCharacter(Exception):
 
+    """
+    A class used to represent an UsernameContainsIllegalCharacter exception
+    """
+
     """A constructor of the UsernameContainsIllegalCharacter class.
     :param username: The username entered.
     :param illegal_char: The illegal character in the name.
@@ -22,6 +26,11 @@ class UsernameContainsIllegalCharacter(Exception):
         return f"username {self.username} contains an illegal char \"{self.illegal_char}\" at index {username.find(self.illegal_char)}"
 
 class UsernameTooShort(Exception):
+
+    """
+    A class used to represent an UsernameTooShort exception
+    """
+
     """A constructor of the UsernameTooShort class.
     :param username: The username entered.
     :type username: str.
@@ -39,6 +48,11 @@ class UsernameTooShort(Exception):
         return f"username {self.username} is shorter than 3 characters"
 
 class UsernameTooLong(Exception):
+
+    """
+    A class used to represent an UsernameTooLong exception
+    """
+
     """A constructor of the UsernameTooLong class.
     :param username: The username entered.
     :type username: str.
@@ -56,6 +70,11 @@ class UsernameTooLong(Exception):
         return f"username {self.username} is longer than 16 characters"
 
 class PasswordMissingCharacter(Exception):
+
+    """
+    A class used to represent a PasswordMissingCharacter exception
+    """
+
     """A constructor of the PasswordMissingCharacter class.
     :param password: The password entered.
     :type password: str.
@@ -73,6 +92,11 @@ class PasswordMissingCharacter(Exception):
         return f"password {self.password} is missing a required character"
 
 class PasswordTooShort(Exception):
+
+    """
+    A class used to represent a PasswordTooShort exception
+    """
+
     """A constructor of the PasswordTooShort class.
     :param password: The password entered.
     :type password: str.
@@ -90,6 +114,11 @@ class PasswordTooShort(Exception):
         return f"password {self.password} is shorter than 8 characters"
 
 class PasswordTooLong(Exception):
+
+    """
+    A class used to represent a PasswordTooLong exception
+    """
+
     """A constructor of the PasswordTooLong class.
     :param password: The password entered.
     :type password: str.
@@ -107,10 +136,20 @@ class PasswordTooLong(Exception):
         return f"password {self.password} is longer than 40 characters"
 
 class PasswordMissingLower(PasswordMissingCharacter):
+
+    """
+    A class used to represent a PasswordMissingLower exception
+    """
+
     def __str__(self):
         return super().__str__() + "(lower)"
 
 class PasswordMissingUpper(PasswordMissingCharacter):
+
+    """
+    A class used to represent a PasswordMissingUpper exception
+    """
+
     """A method for describing the error.
     :return: None.
     :rtype: None.
@@ -119,6 +158,11 @@ class PasswordMissingUpper(PasswordMissingCharacter):
         return super().__str__() + "(upper)"
 
 class PasswordMissingDigit(PasswordMissingCharacter):
+
+    """
+    A class used to represent a PasswordMissingDigit exception
+    """
+
     """A method for describing the error.
     :return: None.
     :rtype: None.
@@ -127,6 +171,11 @@ class PasswordMissingDigit(PasswordMissingCharacter):
         return super().__str__() + "(digit)"
 
 class PasswordMissingSpeciel(PasswordMissingCharacter):
+
+    """
+    A class used to represent a PasswordMissingSpeciel exception
+    """
+
     """A method for describing the error.
     :return: None.
     :rtype: None.
@@ -134,7 +183,23 @@ class PasswordMissingSpeciel(PasswordMissingCharacter):
     def __str__(self):
         return super().__str__() + "(special)"
 
-
+"""Checks if given username and password are valid.
+    :param username: the given username.
+    :param password: the given password.
+    :type username: str.
+    :type password: str.
+    :return: None.
+    :rtype: None.
+    :raise: UsernameTooShort: raises an Exception
+    :raise: UsernameTooLong: raises an Exception
+    :raise: UsernameContainsIllegalCharacter: raises an Exception
+    :raise: PasswordTooShort: raises an Exception
+    :raise: PasswordTooLong: raises an Exception
+    :raise: PasswordMissingUpper: raises an Exception
+    :raise: PasswordMissingLower: raises an Exception
+    :raise: PasswordMissingDigit: raises an Exception
+    :raise: PasswordMissingSpeciel: raises an Exception
+    """
 def check_input(username, password):
     try:
         if len(username) < 3:

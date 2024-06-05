@@ -1,4 +1,10 @@
 
+"""Checks if a given id is valid.
+    :param id_number: the given id.
+    :type id_number: int.
+    :return: True if the id is valid, otherwise False.
+    :rtype: bool.
+    """
 def check_id_valid(id_number):
     sum = 0
     even_flag = False
@@ -19,12 +25,31 @@ def check_id_valid(id_number):
 
 class IDIterator:
 
+    """
+    A class used to represent an Id iterator
+    """
+
+    """A constructor of the IDIterator class.
+    :param _id: The given id.
+    :type _id: int.
+    :return: None.
+    :rtype: None.
+    """
     def __init__(self, _id):
         self._id = _id
 
+    """A method for returning the iterator instance.
+    :return: An IDIterator object .
+    :rtype: IDIterator.
+    """
     def __iter__(self):
         return self
 
+    """A method for iterating the current IDIterator instance.
+    :return: the next valid id.
+    :rtype: int.
+    :raise: StopIteration: raises an Exception
+    """
     def __next__(self):
         self._id += 1
         while not check_id_valid(self._id):
@@ -33,6 +58,12 @@ class IDIterator:
                 raise StopIteration
         return self._id
 
+    """A method for generating valid id's.
+    :param id: The given id.
+    :type id: int.
+    :return: the next generated id.
+    :rtype: int.
+    """
 def id_generator(id):
         while id < 999999999:
             id += 1

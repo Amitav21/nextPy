@@ -1,4 +1,9 @@
 class Animal:
+
+    """
+    A class used to represent an animal
+    """
+
     """A constructor of the animal class.
     :param _name: The name of the animal.
     :param _hunger: The amount of hunger that the animal has.
@@ -42,6 +47,10 @@ class Animal:
 
 
 class Dog(Animal):
+
+    """
+    A class used to represent a dog
+    """
     def talk(self):
         print("woof woof")
 
@@ -54,6 +63,10 @@ class Dog(Animal):
 
 
 class Cat(Animal):
+
+    """
+    A class used to represent a cat
+    """
     def talk(self):
         print("meow")
 
@@ -66,6 +79,11 @@ class Cat(Animal):
 
 
 class Skunk(Animal):
+
+    """
+    A class used to represent a skunk
+    """
+
     """A constructor of the Skunk class.
     :param _name: The name of the Skunk.
     :param _hunger: The amount of hunger that the Skunk has.
@@ -92,6 +110,10 @@ class Skunk(Animal):
 
 
 class Unicorn(Animal):
+
+    """
+    A class used to represent a unicorn
+    """
     def talk(self):
         print("Good day, darling")
 
@@ -104,6 +126,11 @@ class Unicorn(Animal):
 
 
 class Dragon(Animal):
+
+    """
+    A class used to represent a dragon
+    """
+
     """A constructor of the Dragon class.
     :param _name: The name of the Dragon.
     :param _hunger: The amount of hunger that the Dragon has.

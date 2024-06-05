@@ -43,8 +43,12 @@ def id_generator(id):
 
 if __name__ == "__main__":
     id = int(input("enter the id: "))
-    id_iter = IDIterator(id)
-    id_gen = id_generator(id)
-    for i in range(10):
-        print(id_iter.__next__())
-        print(next(id_gen))
+    choice = input("Generator or Iterator? (gen/it)?: ")
+    if choice == "gen":
+        id_gen = id_generator(id)
+        for i in range(10):
+            print(next(id_gen))
+    elif choice == "it":
+        id_iter = IDIterator(id)
+        for i in range(10):
+            print(id_iter.__next__())

@@ -18,6 +18,8 @@ def main():
             while animal.is_hungry():
                 animal.feed()
             animal.talk()
+
+            # activating each animal's special method according to it's class
             if isinstance(animal, Dog):
                 animal.fetch_stick()
             elif isinstance(animal, Cat):

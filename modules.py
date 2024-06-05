@@ -44,9 +44,13 @@ second = (
     128, 156, 134, 157, 136, 156, 136
 )
 
-"""A method for drawing lines in a given tuple of points and color the.
-:return: the current month.
-:rtype: Generator.
+"""A method for drawing lines in a given tuple of points and color.
+:param: points: the given tuple.
+:param: color: the given color.
+:type: points: tuple.
+:type: color: str.
+:return: None.
+:rtype: None.
 """
 def draw_lines(points, color):
         for i in range(0, len(points) - 2, 2):

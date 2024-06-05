@@ -8,10 +8,13 @@
 def check_id_valid(id_number):
     sum = 0
     even_flag = False
+    # double each digit
     double_iter = map(lambda x: int(x) * 2, str(id_number))
     for num in double_iter:
+        # if the index is odd, return it to the base value
         if even_flag == False:
             num = num/2
+        # if its even, it means it was doubled by 2 and we need to check it
         else:
             if num > 9:
                 num = num % 10 + num // 10
@@ -30,26 +33,26 @@ class IDIterator:
     """
 
     """A constructor of the IDIterator class.
-    :param _id: The given id.
-    :type _id: int.
-    :return: None.
-    :rtype: None.
+        :param _id: The given id.
+        :type _id: int.
+        :return: None.
+        :rtype: None.
     """
     def __init__(self, _id):
         self._id = _id
 
     """A method for returning the iterator instance.
-    :return: An IDIterator object .
-    :rtype: IDIterator.
-    """
+        :return: An IDIterator object .
+        :rtype: IDIterator.
+        """
     def __iter__(self):
         return self
 
     """A method for iterating the current IDIterator instance.
-    :return: the next valid id.
-    :rtype: int.
-    :raise: StopIteration: raises an Exception
-    """
+        :return: the next valid id.
+        :rtype: int.
+        :raise: StopIteration: raises an Exception
+        """
     def __next__(self):
         self._id += 1
         while not check_id_valid(self._id):
@@ -58,7 +61,7 @@ class IDIterator:
                 raise StopIteration
         return self._id
 
-    """A method for generating valid id's.
+"""A method for generating valid id's.
     :param id: The given id.
     :type id: int.
     :return: the next generated id.

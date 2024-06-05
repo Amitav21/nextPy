@@ -1,0 +1,1 @@
+this probject is for educational purposes only. it focuses on the subjects of One-liners, Oop, Exceptions, Generators, Iterators and Modules of the course next.py of campus.il. In each chapter there is a final exercise that sums up all of the work in the chapter. Those are my answers to each one of them, enjoy.
